@@ -8,13 +8,14 @@ git clone https://github.com/kenBayama/sparkKafkaTesting.git
 
 ### Prerequisites
 
-Having a Kafka Instance running on the local machine
+Having a Kafka Instance running on the local machine reachable on localhost:9092
 
+JDK 8
 
 ### Installing
 
 
-Open the project in your IDE
+Open the project in your IDE 
 
 import all dependencies via SBT
 
@@ -33,7 +34,7 @@ and choose the pourcentage you want for the false positif.
 
 2. right-click the KafkaScriptSpec in /src/test/scala/fr/untieKnotTest/test/ and click on Run
 
-The four script corresponding to the four question are launch one after another
+The four script corresponding to the four questions are launch one after another
 
 3. You will get all the results on the console
 
