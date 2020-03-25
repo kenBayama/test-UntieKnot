@@ -1,10 +1,27 @@
 package fr.untieKnotTest.kafka
+import java.io._
+import java.nio.file.Paths
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
 
 object Utils {
+
+
+  import org.apache.commons.io.FileUtils
+
+
+  def cleanAllDirectories: Unit = {
+
+
+  Seq("scriptQ2","scriptQ3").map (x =>
+    FileUtils.cleanDirectory(Paths.get("src/test/resources/"+x+"/").toAbsolutePath.toFile))
+
+  Seq("checkpoint-directory","checkpointScript2","checkpointScript3_Q2","checkpointScript3_Q3")
+    .map(  x=>  FileUtils.cleanDirectory(Paths.get(x).toAbsolutePath.toFile))
+
+}
 
   object JsonUtil {
     val mapper = new ObjectMapper() with ScalaObjectMapper

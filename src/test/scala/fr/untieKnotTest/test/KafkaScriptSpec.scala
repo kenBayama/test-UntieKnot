@@ -6,7 +6,7 @@ import fr.untieKnotTest.kafka.Domains.Data
 import org.scalatest.{FeatureSpec, FunSuite, Matchers}
 import fr.untieKnotTest.kafka.FirstScript.writeToKafka
 import fr.untieKnotTest.kafka.UDF.Udf._
-import fr.untieKnotTest.kafka.Utils.JsonUtil
+import fr.untieKnotTest.kafka.Utils._
 import fr.untieKnotTest.common.SparkJob
 import fr.untieKnotTest.kafka.{FirstScript, FourthScript, SecondScript, ThirdScript}
 
@@ -20,6 +20,9 @@ class KafkaScriptSpec extends  FeatureSpec with Matchers with SparkJob {
   feature("Script 1") {
 
     scenario(" first Script :  Open a directory and split file before sending them to Kafka Queue") {
+
+      cleanAllDirectories
+
 
       FirstScript.main(Array.empty[String])
 

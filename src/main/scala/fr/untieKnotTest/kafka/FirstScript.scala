@@ -2,11 +2,12 @@ package fr.untieKnotTest.kafka
 
 import java.nio.file.{Path, Paths}
 import java.util.Properties
+import org.apache.commons.io.FileUtils
 
 import fr.untieKnotTest.common.SparkJob
 import fr.untieKnotTest.kafka.Domains.Data
 import fr.untieKnotTest.kafka.UDF.Udf.getFileNameUDF
-import fr.untieKnotTest.kafka.Utils.JsonUtil
+import fr.untieKnotTest.kafka.Utils._
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
 object FirstScript extends SparkJob{
@@ -44,6 +45,9 @@ object FirstScript extends SparkJob{
       .map(x => JsonUtil.toJson(x))
       .foreach(x => writeToKafka("qOne", x)
       )
+
+    cleanAllDirectories
+
 
   }
 }

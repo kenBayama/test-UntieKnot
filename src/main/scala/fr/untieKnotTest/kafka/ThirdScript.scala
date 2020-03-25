@@ -22,7 +22,7 @@ object ThirdScript extends SparkJob{
       .option("path",Paths.get("src/test/resources/scriptQ3/").toAbsolutePath.toString())
       .option("checkpointLocation", "checkpointScript3_Q3")
       .start()
-      .awaitTermination(60000)
+      .awaitTermination(30000)
 
 
 
@@ -38,7 +38,7 @@ object ThirdScript extends SparkJob{
       .option("path",Paths.get("src/test/resources/scriptQ2/").toAbsolutePath.toString())
       .option("checkpointLocation", "checkpointScript3_Q2")
       .start()
-      .awaitTermination(60000)
+      .awaitTermination(30000)
 
 
 
